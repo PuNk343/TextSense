@@ -1,0 +1,7 @@
+Computer Science undergraduate with strong interest in software development and data-driven systems. Proficient in Python programming and Java. Experience implementing data structures and solving algorithmic problems.
+
+Built academic projects involving REST API development and backend services. Familiar with SQL databases and basic database schema design. Worked with Git for version control and developed applications in Linux environments.
+
+Completed coursework in statistics and data analysis using pandas and NumPy. Participated in team-based software projects following Agile methodologies.
+
+Strong problem-solving skills, effective communication abilities, and collaborative mindset.
