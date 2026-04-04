@@ -4,7 +4,7 @@ A lightweight text-processing tool that compares a job description with a resume
 
 This project demonstrates structured problem decomposition, basic natural language preprocessing, and set-based comparison logic — applied to a real internship use case.
 
----
+
 
 ## Overview
 
@@ -18,7 +18,7 @@ Given:
 
 It extracts meaningful words from both, removes common filler terms, and highlights keywords present in the job description but absent from the resume.
 
----
+
 
 ## Core Concepts Demonstrated
 
@@ -29,7 +29,7 @@ It extracts meaningful words from both, removes common filler terms, and highlig
 * Debugging and file handling
 * Practical application of string processing
 
----
+
 
 ## Project Structure
 
@@ -42,7 +42,7 @@ ResumeKeywordScanner/
 └── README.md
 ```
 
----
+
 
 ## How It Works
 
@@ -53,7 +53,7 @@ ResumeKeywordScanner/
 5. Compute set difference
 6. Display missing keywords and total count
 
----
+
 
 ## How to Run
 
@@ -62,7 +62,8 @@ ResumeKeywordScanner/
 3. Run `scanner.ipynb`
 4. Review the missing keyword output
 
----
+##Version Info:
+v_0.1 : The most basic version based off of one single jupyter notebook code without any backend api and Neural Network implementation.
 
 ## Why This Project Matters
 
