@@ -1,9 +1,0 @@
-We are seeking a highly motivated Software Engineering Intern to join our Data Platforms team. The ideal candidate should have strong foundations in Python programming and object-oriented design principles. Experience with data structures, algorithms, and problem-solving is essential.
-
-The intern will assist in building scalable backend services using REST APIs and microservices architecture. Familiarity with SQL and NoSQL databases such as PostgreSQL or MongoDB is required. Exposure to cloud platforms like AWS or Azure is preferred.
-
-Applicants should understand version control systems such as Git and be comfortable working in Linux environments. Knowledge of containerization technologies including Docker and orchestration tools like Kubernetes is a plus.
-
-Candidates with experience in data analysis, machine learning pipelines, pandas, NumPy, and basic statistics will be given preference. Understanding of CI/CD pipelines and automated testing frameworks is desirable.
-
-Strong communication skills, collaboration mindset, and the ability to work in an Agile development environment are mandatory.
