@@ -1,72 +1,107 @@
-# Resume Keyword Scanner
+# TextSense — Live Writing Clarity Analyzer
 
-A lightweight text-processing tool that compares a job description with a resume to identify missing technical keywords.
+A lightweight NLP-powered web application that analyzes writing in real time.
+It evaluates structure, tone, and word patterns to provide immediate feedback as the user types.
 
-This project demonstrates structured problem decomposition, basic natural language preprocessing, and set-based comparison logic — applied to a real internship use case.
-
-
+---
 
 ## Overview
 
-Modern Applicant Tracking Systems (ATS) rely heavily on keyword matching.
-This tool simulates a simplified version of that logic.
+This project demonstrates a simple end-to-end text analysis pipeline:
 
-Given:
+* Real-time frontend interaction
+* Backend processing using Flask
+* Basic NLP using TextBlob
+* Instant feedback via API communication
 
-* A job description
-* A resume
+The system is designed to reflect how modern applications process and interpret user-generated text dynamically.
 
-It extracts meaningful words from both, removes common filler terms, and highlights keywords present in the job description but absent from the resume.
+---
 
+## Features
 
+* Live word and sentence count
+* Estimated reading time
+* Sentiment analysis (positive / neutral / negative)
+* Most frequent words detection
+* Real-time updates as the user types
 
-## Core Concepts Demonstrated
+---
 
-* Text preprocessing (lowercasing, punctuation removal)
-* Stopword filtering
-* Basic keyword extraction
-* Set operations for comparison
-* Debugging and file handling
-* Practical application of string processing
+## Tech Stack
 
+* Python (Flask)
+* JavaScript (Fetch API)
+* HTML / CSS
+* TextBlob (NLP)
 
-
-## Project Structure
-
-```
-ResumeKeywordScanner/
-│
-├── scanner.ipynb
-├── sample_job.txt
-├── sample_resume.txt
-└── README.md
-```
-
-
+---
 
 ## How It Works
 
-1. Load job description and resume text files
-2. Normalize and clean text
-3. Remove common stopwords
-4. Extract candidate keywords
-5. Compute set difference
-6. Display missing keywords and total count
+1. User inputs text in the browser
+2. JavaScript captures input events
+3. Text is sent to the Flask backend via POST request
+4. Backend processes:
 
+   * Text cleaning
+   * Word and sentence analysis
+   * Sentiment scoring
+5. Results are returned as JSON
+6. Frontend updates the UI instantly
 
+---
 
 ## How to Run
 
-1. Place job description text in `job.txt`
-2. Place resume text in `resume.txt`
-3. Run `scanner.ipynb`
-4. Review the missing keyword output
+1. Install dependencies:
 
-##Version Info:
-v_0.1 : The most basic version based off of one single jupyter notebook code without any backend api and Neural Network implementation.
+```
+pip install flask textblob
+```
 
-## Why This Project Matters
+2. Run the application:
 
-This project transforms an abstract internship struggle into a measurable process.
+```
+python app.py
+```
 
-Instead of guessing why a resume fails to get shortlisted, it provides a structured way to analyze keyword alignment — bridging the gap between application and optimization.
+3. Open in browser:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## Example Output
+
+* Words: 43
+* Sentences: 5
+* Reading Time: 0.21 min
+* Tone: Negative
+* Most Common Words: ["i", "way", "no", "hate"]
+
+---
+
+## Purpose
+
+This project is a simplified demonstration of how real-world systems analyze text input in real time.
+It highlights core engineering concepts such as:
+
+* Client-server communication
+* Event-driven programming
+* Text preprocessing
+* Basic NLP pipelines
+
+---
+
+## Future Improvements
+
+* Sentence clarity scoring
+* Highlighting repeated words in UI
+* Phrase-level analysis
+* TF-IDF keyword importance
+* UI enhancements and visualization
+
+---
