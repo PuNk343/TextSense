@@ -21,3 +21,15 @@ data.common_words.forEach(item => {
     list.appendChild(li)
     })
 })
+const toneElement = document.getElementById("tone")
+toneElement.innerText = data.tone
+
+toneElement.classList.remove("positive", "negative", "neutral")
+
+if (data.tone === "Positive") {
+    toneElement.classList.add("positive")
+} else if (data.tone === "Negative") {
+    toneElement.classList.add("negative")
+} else {
+    toneElement.classList.add("neutral")
+}
