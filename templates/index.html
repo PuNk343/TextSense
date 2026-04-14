@@ -54,8 +54,10 @@ textarea {
 .negative { color: #ef4444; }
 .neutral { color: #eab308; }
 
-ul {
-    margin-top: 10px;
+pre {
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 8px;
 }
 </style>
 
@@ -74,6 +76,12 @@ ul {
     <div class="result-item">Sentences: <span id="sentences">0</span></div>
     <div class="result-item">Reading Time: <span id="time">0</span> min</div>
     <div class="result-item">Tone: <span id="tone" class="neutral">Neutral</span></div>
+
+    <div class="result-item">Tone Insight: <span id="toneMessage"></span></div>
+    <div class="result-item">Detected Format: <span id="formatType"></span></div>
+
+    <h4>Suggested Structure</h4>
+    <pre id="formatSuggestion"></pre>
 
     <h4>Most Common Words</h4>
     <ul id="common"></ul>
