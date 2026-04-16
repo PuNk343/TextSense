@@ -1,33 +1,71 @@
-# TextSense — Real-Time Writing Clarity Analyzer
+# TextSense — Real-Time Text Intelligence with Neural NLP
 
-A lightweight, full-stack web application that analyzes written text in real time.
-It evaluates structure, tone, and lexical patterns to provide immediate feedback as the user types.
+TextSense is a lightweight full-stack web application that analyzes written text in real time and provides structured insights into clarity, tone, and writing patterns.
+
+With the integration of a pretrained neural model, the system now combines rule-based processing with deep learning to deliver more nuanced and human-like interpretation of text.
 
 ---
 
 ## Overview
 
-TextSense is designed as a minimal yet complete demonstration of a real-time text processing system.
+TextSense processes user input dynamically through a real-time feedback loop. It evaluates structural metrics, extracts patterns, and leverages a neural network to interpret sentiment with higher contextual awareness.
 
-The application captures user input dynamically, processes it through a backend NLP pipeline, and updates the interface instantly. It reflects how modern systems handle continuous user-generated data with low latency.
+This version represents a shift from basic analysis toward intelligent, model-driven understanding.
 
 ---
 
 ## Key Features
 
-* Live word and sentence count
-* Estimated reading time
-* Sentiment classification (Positive / Neutral / Negative)
-* Frequency analysis of most common words
-* Dynamic UI updates with tone-based visual feedback
+### Core Analysis
+
+* Live word count
+* Sentence count
+* Reading time estimation
+* Most frequent words detection
+
+### Neural Tone Analysis
+
+* Deep learning-based sentiment classification
+* Confidence scoring for predictions
+* More context-aware tone detection compared to traditional methods
+
+### Writing Assistance
+
+* Format detection (letter, casual message, general writing)
+* Suggested structural templates
+* Real-time feedback as the user types
+
+### User Experience
+
+* Instant updates via asynchronous requests
+* Clean dark-themed interface
+* Color-coded tone indicators
 
 ---
 
 ## System Architecture
 
-The application follows a simple client–server model:
+The application follows a real-time client–server pipeline:
 
-User Input → JavaScript Event → HTTP Request → Flask Backend → NLP Processing → JSON Response → UI Update
+User Input
+→ JavaScript Event Listener
+→ HTTP Request (Fetch API)
+→ Flask Backend
+→ Hybrid NLP Processing
+→ JSON Response
+→ Dynamic UI Update
+
+---
+
+## NLP Pipeline
+
+This version introduces a hybrid approach:
+
+* **Regex & Counters** → text structure and frequency
+* **TextBlob** → baseline sentiment reference
+* **Transformers (Hugging Face)** → neural sentiment analysis
+
+The neural model is pretrained on large-scale datasets and enables deeper contextual understanding beyond rule-based logic.
 
 ---
 
@@ -35,24 +73,9 @@ User Input → JavaScript Event → HTTP Request → Flask Backend → NLP Proce
 
 * **Backend:** Python (Flask)
 * **Frontend:** HTML, CSS, JavaScript
-* **NLP:** TextBlob
-* **Communication:** REST API (JSON over HTTP)
-
----
-
-## How It Works
-
-1. The user types into a textarea in the browser
-2. JavaScript listens for input events
-3. Each input triggers an asynchronous POST request to the backend
-4. The Flask server processes the text:
-
-   * tokenizes words using regex
-   * splits sentences
-   * computes frequency distributions
-   * evaluates sentiment using TextBlob
-5. The server returns structured data in JSON format
-6. The frontend updates the interface in real time
+* **NLP:** TextBlob + Hugging Face Transformers
+* **Deep Learning Framework:** PyTorch
+* **Communication:** JSON over HTTP
 
 ---
 
@@ -60,19 +83,19 @@ User Input → JavaScript Event → HTTP Request → Flask Backend → NLP Proce
 
 1. Install dependencies:
 
-```
-pip install flask textblob
+```id="run1"
+pip install flask textblob transformers torch
 ```
 
 2. Start the server:
 
-```
+```id="run2"
 python app.py
 ```
 
 3. Open in browser:
 
-```
+```id="run3"
 http://127.0.0.1:5000
 ```
 
@@ -80,45 +103,61 @@ http://127.0.0.1:5000
 
 ## Example Output
 
-* Words: 43
+* Words: 60
 * Sentences: 5
-* Reading Time: 0.21 min
-* Tone: Negative
-* Common Words: i (5), way (4), no (3), hate (2)
+* Reading Time: 0.30 min
+* Tone: Positive
+* Neural Confidence: 92%
+* Tone Insight: “Neural model detects a positive tone with high confidence.”
+* Detected Format: Letter
+* Suggested Structure:
+
+  ```
+  Dear [Name],
+
+  [Opening]
+
+  [Main Content]
+
+  [Closing]
+
+  Regards,
+  [Your Name]
+  ```
 
 ---
 
 ## Design Notes
 
-* The system is intentionally lightweight and avoids heavy NLP frameworks
-* Combines rule-based text processing with a pretrained sentiment model
-* Designed for clarity, responsiveness, and minimal latency
+* The system remains intentionally lightweight while integrating deep learning
+* Neural inference is performed using a pretrained transformer model
+* Designed to balance performance and interpretability
 
 ---
 
 ## Limitations
 
-* Sentence segmentation is regex-based and may be imprecise
-* Frequent API calls (one per keystroke) may impact performance
-* Stopword filtering is minimal
-* No phrase-level or contextual analysis
+* Neural inference introduces latency compared to simpler models
+* Each keystroke triggers a request, which may impact performance
+* Model is limited to general sentiment and does not capture complex intent
+* No caching or batching of requests
 
 ---
 
 ## Future Improvements
 
-* Input debouncing to reduce request frequency
-* Enhanced sentence parsing
-* Stopword filtering and keyword weighting
-* Phrase-level analysis (n-grams)
-* Clarity scoring system
-* Improved UI/UX and visualization
+* Input debouncing for performance optimization
+* Visualization of model confidence
+* Comparison between classical and neural outputs
+* Intent detection (complaint, request, etc.)
+* Deployment to cloud for real-world usage
 
 ---
 
 ## Purpose
 
-This project demonstrates the transition from static scripts to interactive systems.
-It focuses on understanding how frontend interaction, backend processing, and real-time communication integrate into a cohesive application.
+This project demonstrates how traditional NLP techniques can be combined with modern deep learning models to build real-time, interactive systems.
+
+It reflects the transition from rule-based analysis to model-driven interpretation in practical applications.
 
 ---
